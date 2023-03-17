@@ -53,6 +53,7 @@ plot_cpdb3 <- function(cell_type1, cell_type2, scdata, idents, means, pvals, dec
         scdata = scdata, idents = idents, split.by = split.by, means = means, pvals = pvals,
         keep_significant_only = keep_significant_only, standard_scale = standard_scale,
         return_table = TRUE, degs_analysis = degs_analysis, ...)
+    lr_interactions <- lr_interactions[!is.na(lr_interactions$pvals),] # not sure of why NA values existed!
     requireNamespace("SummarizedExperiment")
     requireNamespace("SingleCellExperiment")
     if (is.null(split.by)) {
