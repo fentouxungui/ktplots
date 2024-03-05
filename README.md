@@ -15,7 +15,7 @@ if (!requireNamespace("devtools", quietly = TRUE))
     install.packages("devtools")
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-devtools::install_github('fentouxungui/ktplots-archive', dependencies = TRUE)
+devtools::install_github('fentouxungui/ktplots-archive@old-zhangyc', dependencies = TRUE)
 ```
 ## Usage instructions
 ```R
