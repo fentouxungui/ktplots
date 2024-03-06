@@ -113,6 +113,9 @@ plot_cpdb2 <- function(scdata, cell_type1, cell_type2, celltype_key, means, pval
     }
     # extract all the possible genes.
     geneid <- unique(c(interactions_subset$id_a, interactions_subset$id_b))
+    geneid <- unlist(lapply(as.list(geneid), strsplit, "_")) # 有的是complex
+    # 添加deconvoluted中对应的基因
+    geneid <- unique(c(geneid,deconvoluted$gene_name[deconvoluted$id_cp_interaction %in% interactions_subset$id_cp_interaction]))
     # rmg = which(geneid == '') if (length(rmg) > 0){ geneid =
     # geneid[-which(geneid == '')] }
     if (all(!geneid %in% row.names(sce_subset))) {
