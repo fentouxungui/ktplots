@@ -604,7 +604,7 @@ DEFAULT_CPDB_SEP <- "|"
                         ),
                         aes(colour = group, alpha = `-log10(sig)`, width = interaction_score),
                         tension = 0.5
-                    ) # + scale_edge_width(range = c(1, 3)) + scale_edge_alpha(limits = c(0, 1)) +
+                    )  + scale_edge_width(range = c(1, 3)) + scale_edge_alpha(limits = c(0, 1))
             } else {
                 pl <- ggraph(gr, layout = "dendrogram", circular = TRUE) +
                     geom_conn_bundle(
@@ -614,7 +614,7 @@ DEFAULT_CPDB_SEP <- "|"
                         ),
                         aes(colour = group, alpha = interaction_score, width = `-log10(sig)`),
                         tension = 0.5
-                    ) # + scale_edge_width(range = c(1, 3)) + scale_edge_alpha(limits = c(0, 1)) +
+                    ) + scale_edge_width(range = c(1, 3)) + scale_edge_alpha(limits = c(0, 1))
             }
             pl <- pl + scale_edge_color_manual(values = edge_group_colors) +
                 geom_node_point(pch = 19, aes(
@@ -628,7 +628,7 @@ DEFAULT_CPDB_SEP <- "|"
                 geom_text_repel(aes(x = x, y = y, label = label),
                     segment.square = TRUE,
                     segment.inflect = TRUE, segment.size = 0.2, force = 0.5,
-                    size = 2, force_pull = 0
+                    size = 2.5, force_pull = 0
                 ) + scale_alpha_manual(values = c(
                     ligand = 0.5,
                     receptor = 1
