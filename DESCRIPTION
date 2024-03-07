@@ -11,7 +11,7 @@ Imports:
     Matrix,
     dplyr,
     ggplot2,
-    ggraph,
+    ggraph(>=2.2.0),
     ggrepel,
     reshape2,
     viridis,
